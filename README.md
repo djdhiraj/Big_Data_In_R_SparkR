@@ -1,5 +1,4 @@
 # Big_Data_In_R_SparkR
-# Big_Data_In_R_SparkR
 What is SparkR
 An R package distributed with Apache Spark:
 Provides R fronted to Spark
@@ -9,27 +8,27 @@ Dynamic environment, interactive, packages, visualization
 
 
 Overview of SparkR API 
-IO
+# IO
 * read.df
 * write.df
 * createDataFrame
 * collect 
 
-Caching 
+# Caching 
 * cache
 * persist 
 * unpersist
 * cacheTable
 * uncacheTable
 
-Utility Functons 
+# Utility Functons 
 * dim/ head/ take
 * rand/ sample
 
-MLLib 
+# MLLib 
 * glm/ predict
 
-DataFrameAPI
+# DataFrameAPI
  * select
  * subset
  *groupBy 
@@ -40,7 +39,7 @@ DataFrameAPI
  * avg
  * column
  
-SQL
+# SQL
 * sql
 * table
 * saveAsTable
