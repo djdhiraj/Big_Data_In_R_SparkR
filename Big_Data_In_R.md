@@ -9,12 +9,17 @@ Dynamic environment, interactive, packages, visualization
 
 Overview of SparkR API 
 IO
-read.df/ write.df
-createDataFrame/ collect 
+* read.df
+* write.df
+* createDataFrame
+* collect 
 
 Caching 
-cache/ persist/ unpersist
-cacheTable/ uncacheTable
+* cache
+* persist 
+* unpersist
+* cacheTable
+* uncacheTable
 
 Utility Functons 
 * dim/ head/ take
@@ -24,7 +29,19 @@ MLLib
 * glm/ predict
 
 DataFrameAPI
- select/ subset/ groupBy/ head/ showDF/ unionAll/ agg/ avg/ column
+ * select
+ * subset
+ *groupBy 
+ * head
+ * showDF 
+ * unionAll 
+ * agg
+ * avg
+ * column
  
 SQL
-sql/ table/ saveAsTable/ registerTamTable/ tables
+* sql
+* table
+* saveAsTable
+* registerTamTable
+* tables
