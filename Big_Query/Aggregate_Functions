@@ -1,1 +1,14 @@
+AVG(): Returns the average of the values for a group of rows.
+COUNT(): Returns the total number of values.
+FIRST(): Returns the first seqential value in the scope of the function.
+GROUP_CONCAT(): Concatenates multiple string into a single string.
+MAX(): Returns the maximum value.
+MIN(): Returns the minimum value.
+stddev(): Returns the standard deviation.
+SUM(): Returns the sum value.
+TOP(): Alternative to group by clause with a limit condition.
+UNIQUE(): Returns the set of unique, non-NULL values.
+VARIANCE(): Computes the sample variance of the value.
+
+
 
