@@ -11,4 +11,15 @@ UNIQUE(): Returns the set of unique, non-NULL values.
 VARIANCE(): Computes the sample variance of the value.
 
 
+# avg()
+SELECT AVG(Age) FROM new_data.German_data WHERE Saving_accounts != 'NA' LIMIT 100
+
+# Count()
+SELECT COUNT(Age) AS COUNT 
+FROM new_data.German_data 
+WHERE Saving_accounts IS NOT NULL
+GROUP BY  Job
+HAVING Job IS NOT NULL
+LIMIT 1000
+
 
