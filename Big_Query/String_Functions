@@ -1,1 +1,9 @@
+CONCAT(): Returns the concatenations of two or more strings.
+LEFT(): Returns the leftmost characters of a strings.
+LENGTH(): Returns the length of the string.
+LOWER(): Returns the original string with all characters in lower case.
+LTRIM(): Removes the characters from the left side of the a string.
+REPLACE(): Returns all occurrences of a substring.
+SPLIT(): Returns a substring of a string.
+UPPER():Returns the original string with all characters in upper case.
 
