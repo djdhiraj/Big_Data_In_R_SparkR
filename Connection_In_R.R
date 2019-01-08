@@ -8,7 +8,9 @@ conf
 install.packages("nycflights13")
 library(nycflights13)
 flights <- copy_to(sc, flights, "flights") #Copy data flights with the name of flights copied into spark 
+src_tbls(sc) # provides the name of all table in spark connection
 flights_tbl <- spark_read_parquet(sc, "flights", "datainputs/nycflights13-parquet/flights")
+flights_db <- dbGetQuery(sc, "SELECT * FROM flights") # We can excute the sql queries in spark R with the help of dbGetQuery method
 library(dplyr) 
 library(sparklyr)
 library(ggplot2)
