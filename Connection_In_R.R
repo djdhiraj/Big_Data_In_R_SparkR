@@ -1,15 +1,15 @@
 install.packages("sparklyr")
 library(sparklyr)
 sparklyr::spark_install()
-sc<-spark_connect(master = "local")
+sc<-spark_connect(master = "local") #Connected with the name of sc 
 sc <- spark_connect(master = "local", version = "2.0.0", hadoop_version="2.7")
 conf <- spark_config()
 conf
 install.packages("nycflights13")
 library(nycflights13)
-flights <- copy_to(sc, flights, "flights")
+flights <- copy_to(sc, flights, "flights") #Copy data flights with the name of flights copied into spark 
 flights_tbl <- spark_read_parquet(sc, "flights", "datainputs/nycflights13-parquet/flights")
-library(dplyr)
+library(dplyr) 
 library(sparklyr)
 library(ggplot2)
 flights <- copy_to(sc, flights, "flights")
