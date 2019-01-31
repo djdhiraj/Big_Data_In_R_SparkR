@@ -1,0 +1,10 @@
+beaver <- beaver2
+beaver$activ <- factor(beaver$activ, labels = c("Non-Active", "Active"))
+copy_to(sc, beaver, "beaver")
+beaver_tbl <- tbl(sc, "beaver")
+ 
+glm_model <- beaver_tbl %>%
++     mutate(binary_response = as.numeric(activ == "Active")) %>%
++     ml_logistic_regression(binary_response ~ temp)
+
+glm_model
