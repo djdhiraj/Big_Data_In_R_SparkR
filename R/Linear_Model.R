@@ -1,3 +1,13 @@
+
+#Split a Spark DataFrame into training, test datasets.
+partitions <- tbl(sc, "iris") %>%
+  sdf_partition(training = 0.75, test = 0.25, seed = 1099)
+
+fit <- partitions$training %>%
+  ml_linear_regression(Petal_Length ~ Petal_Width)
+
+
+
 lm_model <- iris_tbl %>%
 +     select(Petal_Width, Petal_Length) %>%
 +     ml_linear_regression(Petal_Length ~ Petal_Width)
@@ -18,3 +28,13 @@ iris_tbl %>%
 +         title = "Linear Regression: Petal Length ~ Petal Width",
 +         subtitle = "Use Spark.ML linear regression to predict petal length as a function of petal width."
 +     )
+
+
+estimate_mse <- function(df){
+  sdf_predict(fit, df) %>%
+  mutate(resid = Petal_Length - prediction) %>%
+  summarize(mse = mean(resid ^ 2)) %>%
+  collect
+}
+
+sapply(partitions, estimate_mse)
