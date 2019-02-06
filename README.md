@@ -46,3 +46,18 @@ Overview of SparkR API
 * registerTamTable
 * tables
 
+# Transformation in Apache Spark
+
+* map
+* flatmap
+* filter
+* distict
+* sample
+* union 
+* intersection
+* subtract 
+* cartesian
+
+
+
+
