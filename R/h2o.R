@@ -135,4 +135,20 @@ iris.test <- iris.split[[2]]
 iris.hex <- h2o.getFrame(id = "iris.hex")
 ?h2o()
 h2o.ls()
+h2o.init(nthreads = -1)
+iris.gbm <- h2o.gbm(y = 1, x = 2:5,training_frame =iris.hex, ntrees = 10, max_depth = 3,min_rows = 2,learn_rate = 0.2,distribution= "gaussian")
+# To obtain the Mean-squared Error by tree from the model object:
+iris.gbm@model$scoring_history
+iris.gbm2 <- h2o.gbm(y = 5, x = 1:4, training_frame
+                     = iris.hex, ntrees = 15, max_depth = 5, min_rows =
+                       2, learn_rate = 0.01, distribution= "multinomial"
+)
+# prostate.glm<-h2o.glm(y = "Species", x = c("Sepal.Length","Sepal.Width","Petal.Length","Petal.Width"), training_frame = iris.hex, family = "binomial", nfolds = 10, alpha = 0.5)
+#iris.hex
+iris_kmean<-h2o.kmeans(training_frame = iris.hex, k = 3, x =1:4)
+
+iris_path = system.file("extdata", "iris.csv",package="h2o")
+iris.hex = h2o.importFile(path = iris_path)
+iris.pca <- h2o.prcomp(training_frame = iris.hex, transform = "STANDARDIZE",k = 3)
+iris.pca
 
