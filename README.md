@@ -58,6 +58,15 @@ Overview of SparkR API
 * subtract 
 * cartesian
 
+# Actions 
+* collect()
+* count()
+* take()
+* takeOrdered(num)(ordering)
+* reduce(function)
+* aggregate(zeroValue)(seqOp, combOp)
+* foreach(function)
+
 
 
 
