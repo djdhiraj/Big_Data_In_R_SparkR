@@ -58,7 +58,7 @@ Overview of SparkR API
 * subtract 
 * cartesian
 
-# Actions 
+# Actions in Apache spark
 * collect()
 * count()
 * take()
