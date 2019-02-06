@@ -69,11 +69,16 @@ Overview of SparkR API
 
 # Machine Learning Model in H2O
 
-* Deep Leaning                          * Naive Bayes          
-* Linear Regression                     * Principal Components Analysis (PCA) 
-* K Means                               * Stacked Ensembles  
-* Generalised Linear Model              * Gradient Boosting Machine 
-* Generalized Low Rank Model            * Distributed Random Forest
+* Deep Leaning      
+* Naive Bayes 
+* Linear Regression       
+* Principal Components Analysis (PCA) 
+* K Means               
+* Stacked Ensembles  
+* Gradient Boosting Machine 
+* Generalised Linear Model             
+* Generalized Low Rank Model   
+* Distributed Random Forest
 * Word2vec
 
 
