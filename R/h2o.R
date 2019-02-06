@@ -104,4 +104,35 @@ as.factor(iris.hex[,4]) # Converting into dataframe to factor
 iris.hex[,4] <- as.factor(iris.hex[,4])
 as.factor(iris.hex[,4])
 summary(iris.hex[,4])
+ 
+
+# Import the iris data into H2O
+data(iris)
+iris
+# Convert R data frame into H2O data frame
+iris.hex = as.h2o(iris, destination_frame= "iris.hex")
+head(iris.hex)
+## Assign a new name to prostate dataset in the KV store
+h2o.ls()
+##Displays the titles of the columns
+colnames(iris.hex)
+names(iris.hex)
+min(iris.hex$Sepal.Width)
+max(iris.hex$Sepal.Width)
+summary(iris.hex)
+head(as.data.frame(h2o.table(iris.hex[,"Sepal.Width"])))
+## Creates object for uniform distribution on prostate data set
+iris_s <- h2o.runif(iris.hex)
+iris.train <- iris.hex[iris_s <= 0.8,]
+iris.train <- h2o.assign(iris.train,"prostate.train")
+iris.test <- iris.hex[iris_s > 0.8,]
+iris.test <- h2o.assign(iris.test, "prostate.test")
+nrow(iris.train) + nrow(iris.test)
+nrow(iris.hex) ## Matches the full set
+iris.split <- h2o.splitFrame(data = iris.hex ,ratios = 0.75)
+iris.train <- iris.split[[1]]
+iris.test <- iris.split[[2]]
+iris.hex <- h2o.getFrame(id = "iris.hex")
+?h2o()
+h2o.ls()
 
