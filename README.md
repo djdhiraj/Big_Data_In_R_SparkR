@@ -67,6 +67,15 @@ Overview of SparkR API
 * aggregate(zeroValue)(seqOp, combOp)
 * foreach(function)
 
+# Machine Learning Model in H2O
+
+* Deep Leaning                          * Naive Bayes          
+* Linear Regression                     * Principal Components Analysis (PCA) 
+* K Means                               * Stacked Ensembles  
+* Generalised Linear Model              * Gradient Boosting Machine 
+* Generalized Low Rank Model            * Distributed Random Forest
+* Word2vec
+
 
 
 
