@@ -57,4 +57,22 @@ airlines.train = airlines.split[[1]]  # train data set
 airlines.test = airlines.split[[2]]  # test data set
 h2o.table(airlines.train$Cancelled)  # View table data set 
 h2o.table(airlines.test$Cancelled)   # View table data set
+# Set predictor and response variables
+Y = "IsDepDelayed"
+X = c("Origin", "Dest", "DayofMonth", "Year", "DayOfWeek", "Month", "DepTime", "Distance")
+# Define the data for the model and display the
+# results
+airlines.glm <- h2o.glm(training_frame=airlines.train,
+                           x=X, y=Y, family = "binomial", alpha = 0.5)
+# View model information: training statistics,
+performance, important variables
+summary(airlines.glm)
+
+# Predict using GLM model
+pred = h2o.predict(object = airlines.glm, newdata =
+                        airlines.test)
+# Look at summary of predictions: probability of TRUE
+class (pred$p1)
+summary(pred$p1)
+pred
 
