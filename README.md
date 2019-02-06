@@ -81,6 +81,21 @@ Overview of SparkR API
 * Distributed Random Forest
 * Word2vec
 
+# Supervised Learning 
+* Generalised Linear Model
+* Distribution Random Forest 
+* Gradient Boosting 
+* Deep learing 
+* Naive Bayes 
+* Stacked Ensembles 
+* XGBoost 
 
+# Unsupervised Learning 
+* K-Means 
+* Anomaly Detection 
+
+# Miscellaneouse 
+* Word2vec :
+  Takes a text corpus as an inuput and product the word vectors as output. The result is an H20 word2vec model that can be exported as a   binary model or as a MOJO
 
 
