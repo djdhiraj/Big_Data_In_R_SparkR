@@ -43,3 +43,18 @@ originFlights <- h2o.group_by(data = airlines.hex[c("Origin",cols)],
 # Note a warning because col.names null
 res <- h2o.cbind(lapply(cols, function(x){h2o.group_by(airlines.hex,by="Origin",sum(x))}))[,c(1,2,4,6)]
 res
+summary(airlines.hex)
+
+
+# View quantiles and histograms
+#high_na_columns = h2o.ignoreColumns(data = airlines.hex)
+quantile(x = airlines.hex$ArrDelay, na.rm = TRUE)
+h2o.hist(airlines.hex$ArrDelay)
+
+airlines.split = h2o.splitFrame(data = airlines.hex,
+                                ratios = 0.85) # Split data into test and train 
+airlines.train = airlines.split[[1]]  # train data set
+airlines.test = airlines.split[[2]]  # test data set
+h2o.table(airlines.train$Cancelled)  # View table data set 
+h2o.table(airlines.test$Cancelled)   # View table data set
+
