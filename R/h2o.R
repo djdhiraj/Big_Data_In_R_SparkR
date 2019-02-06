@@ -75,4 +75,33 @@ pred = h2o.predict(object = airlines.glm, newdata =
 class (pred$p1)
 summary(pred$p1)
 pred
+airlines.glm <- h2o.glm(training_frame=airlines.train,
+                           x=X, y=Y, family = "binomial", alpha = 0.5)
+# View model information: training statistics,
+performance, important variables
+summary(airlines.glm)
+
+# Predict using GLM model
+pred = h2o.predict(object = airlines.glm, newdata =
+                        airlines.test)
+# Look at summary of predictions: probability of TRUE
+class (pred$p1)
+summary(pred$p1)
+pred
+
+irisPath = system.file("extdata", "iris.csv", package=
+                         "h2o")
+irisPath
+
+iris.hex = h2o.uploadFile(path = irisPath, destination_frame = "iris.hex")
+iris.hex                          
+class(iris.hex)
+irisPath = system.file("extdata", "iris_wheader.csv",
+                       package="h2o")
+iris.hex = h2o.importFile(path = irisPath)
+class(iris.hex)
+as.factor(iris.hex[,4]) # Converting into dataframe to factor 
+iris.hex[,4] <- as.factor(iris.hex[,4])
+as.factor(iris.hex[,4])
+summary(iris.hex[,4])
 
