@@ -9,3 +9,10 @@ library(h2o)
 h2o.init()
 airlinesURL <- "https://s3.amazonaws.com/h2o-airlines-unpacked/allyears2k.csv"
 airlines.hex <- h2o.importFile(path = airlinesURL, destination_frame = "airlines.hex")
+flightsByMonth <- h2o.group_by(data = airlines.hex,
+                               by = "Month",
+                               nrow("Month"),
+                               gb.control=list(na.methods="rm"))   #Group by Month data frame in h2o
+flightsByMonth.R <- as.data.frame(flightsByMonth) # Convert h2o data frame to R data frame 
+class(flightsByMonth.R)      
+
